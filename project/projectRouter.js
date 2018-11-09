@@ -17,8 +17,7 @@ router.get("/", (req, res) => {
 router.get("/:id/action", (req, res) => {
     const id = req.params.id;
     
-    projectDb
-      .get()
+    projectDb.get()
       .then(action => {
         res.status(200).json(action);
       })
