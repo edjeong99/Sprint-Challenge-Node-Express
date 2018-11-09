@@ -14,6 +14,20 @@ router.get("/", (req, res) => {
     );
 });
 
+router.get("/:id/action", (req, res) => {
+    const id = req.params.id;
+    
+    projectDb
+      .get()
+      .then(action => {
+        res.status(200).json(action);
+      })
+      .catch(err =>
+        res.status(500).json({ message: "could not get action", error })
+      );
+  });
+
+
 router.post("/", (req, res) => {
   const body = req.body;
 

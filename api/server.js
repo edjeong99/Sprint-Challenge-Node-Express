@@ -12,6 +12,6 @@ configureMiddleware(server);
 
 server.use('/api/project', projectRouter); 
 
-server.use('api/action', actionRouter);  //routes for all posts URL
+server.use('/api/action', actionRouter);  
 
 module.exports = server;
